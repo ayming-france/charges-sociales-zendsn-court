@@ -167,13 +167,13 @@
 <section class="slide" data-chapter="qui-fait-quoi">
   <div class="slide-inner">
     <h1 class="slide-title">Fiabiliser avec ZenDSN, optimiser avec Ayming</h1>
-    <p class="slide-subtitle qq-sub">Deux expertises complémentaires</p>
 
     <style>
       .slide[data-chapter="qui-fait-quoi"] { --qq-teal: color-mix(in srgb, var(--blue-primary) 60%, var(--blue-dark)); }
-      /* .slide-subtitle is revealed by the engine, never give it an animation of its own here. */
       .slide[data-chapter="qui-fait-quoi"] .slide-title { margin-bottom: 14px; }
-      .slide[data-chapter="qui-fait-quoi"] .qq-sub { text-align: center; margin: 0 auto 20px; font-size: 18px; }
+      .slide[data-chapter="qui-fait-quoi"] .qq-tag { position: absolute; left: 0; top: 362px; width: 1220px; text-align: center; font-size: 20px; font-weight: 600; color: #004A76; }
+      .slide[data-chapter="qui-fait-quoi"].active .qq-tag { animation: qqRise .6s ease 4.2s both; }
+      @media (prefers-reduced-motion: reduce) { .slide[data-chapter="qui-fait-quoi"] .qq-tag { animation: none !important; } }
       .slide[data-chapter="qui-fait-quoi"] .qq-stage { position: relative; width: 1220px; height: 412px; flex: none; margin: 30px auto 0; text-align: left; font-family: 'Lato', sans-serif; }
       .slide[data-chapter="qui-fait-quoi"] .qq-verb { position: absolute; top: 0; width: 214px; text-align: center; font-size: 12px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; color: var(--qq-teal); }
       .slide[data-chapter="qui-fait-quoi"] .qq-logo { position: absolute; top: 20px; width: 214px; height: 50px; display: flex; align-items: center; justify-content: center; }
@@ -257,6 +257,7 @@
       <div class="qq-dot" style="offset-path:path('M1000 241 C800 241 760 209 656 209 L564 209 C470 209 420 241 220 241');--t:6.2s;--c:#00AEEF"></div>
       <div class="qq-dot" style="offset-path:path('M220 177 C400 177 460 209 564 209 L656 209 C760 209 830 305 1000 305');--t:5.6s;--c:#00AEEF"></div>
       <div class="qq-dot" style="offset-path:path('M220 305 C420 305 470 209 564 209 L656 209 C770 209 800 177 1000 177');--t:6.6s;--c:#00AEEF"></div>
+      <div class="qq-tag">Deux expertises complémentaires</div>
     </div>
   </div>
 </section>
@@ -627,27 +628,27 @@
       .slide[data-chapter="parcours"] .pc-doc i { display: block; height: 2px; margin: 4px 4px 0; border-radius: 2px; background: rgba(0,74,118,.22); }
 
       /* Animation, keyed on the active slide. Base styles above are the final frame. */
-      .slide[data-chapter="parcours"].active .pc-doc { animation: pcJourney 20.661s linear both, pcOrbit 7.500s linear 20.736s infinite both, pcShrink 0.750s ease-in-out 20.211s both; animation-composition: replace, add, replace; will-change: offset-distance; }
-      .slide[data-chapter="parcours"].active .pc-node { animation: pcAppear 0.750s ease-out both; animation-delay: var(--a); }
+      .slide[data-chapter="parcours"].active .pc-doc { animation: pcJourney 16.599s linear both, pcOrbit 5.000s linear 16.649s infinite both, pcShrink 0.500s ease-in-out 16.299s both; animation-composition: replace, add, replace; will-change: offset-distance; }
+      .slide[data-chapter="parcours"].active .pc-node { animation: pcAppear 0.500s ease-out both; animation-delay: var(--a); }
       .slide[data-chapter="parcours"].active .pc-mock, .slide[data-chapter="parcours"].active .pc-res { animation: pcLife 2.550s linear both; animation-delay: var(--d); }
       .slide[data-chapter="parcours"].active .pc-sheet { animation-name: pcLifeS; animation-duration: 3.150s; }
-      .slide[data-chapter="parcours"].active .pc-note { animation: pcNote 11.134s linear 2.898s both; }
-      @keyframes pcLife { 0% { opacity: 0; transform: scale(.88) translateY(10px); animation-timing-function: cubic-bezier(.3,1.3,.5,1); } 23.53% { opacity: 1; transform: none; } 70.59% { opacity: 1; transform: none; animation-timing-function: ease-in; } 100% { opacity: 0; transform: scale(.3); } }
-      @keyframes pcLifeS { 0% { opacity: 0; transform: scale(.88) translateY(10px); animation-timing-function: cubic-bezier(.3,1.3,.5,1); } 19.05% { opacity: 1; transform: none; } 76.19% { opacity: 1; transform: none; animation-timing-function: ease-in; } 100% { opacity: 0; transform: scale(.3); } }
+      .slide[data-chapter="parcours"].active .pc-note { animation: pcNote 10.223s linear 1.907s both; }
+      @keyframes pcLife { 0% { opacity: 0; transform: scale(.88) translateY(10px); animation-timing-function: cubic-bezier(.3,1.3,.5,1); } 15.69% { opacity: 1; transform: none; } 47.06% { opacity: 1; transform: none; animation-timing-function: ease-in; } 100% { opacity: 0; transform: scale(.3); } }
+      @keyframes pcLifeS { 0% { opacity: 0; transform: scale(.88) translateY(10px); animation-timing-function: cubic-bezier(.3,1.3,.5,1); } 12.70% { opacity: 1; transform: none; } 50.79% { opacity: 1; transform: none; animation-timing-function: ease-in; } 100% { opacity: 0; transform: scale(.3); } }
       @keyframes pcAppear { from { opacity: 0; transform: translateY(10px); } }
       @keyframes pcNote { 0% { opacity: 0; } 4% { opacity: .8; } 96% { opacity: .8; } 100% { opacity: 0; } }
-      .slide[data-chapter="parcours"].active .pc-glow::after { animation: pcGlow 2.400s ease-out both; animation-delay: var(--d); }
-      .slide[data-chapter="parcours"].active .pc-head, .slide[data-chapter="parcours"].active .pc-logo, .slide[data-chapter="parcours"].active .pc-sep, .slide[data-chapter="parcours"].active .pc-eyebrow, .slide[data-chapter="parcours"].active .pc-nonote { animation: pcFade 0.900s ease both; animation-delay: 0.150s; }
+      .slide[data-chapter="parcours"].active .pc-glow::after { animation: pcGlow 1.600s ease-out both; animation-delay: var(--d); }
+      .slide[data-chapter="parcours"].active .pc-head, .slide[data-chapter="parcours"].active .pc-logo, .slide[data-chapter="parcours"].active .pc-sep, .slide[data-chapter="parcours"].active .pc-eyebrow, .slide[data-chapter="parcours"].active .pc-nonote { animation: pcFade 0.600s ease both; animation-delay: 0.100s; }
       .slide[data-chapter="parcours"].active .pc-reveal:not(.rr):not(.rx) { animation: pcRing var(--m) cubic-bezier(0.4,0.06,0.6,0.94) both; animation-delay: var(--s); }
-      .slide[data-chapter="parcours"].active .pc-reveal.rr { animation: pcRing 1.800s cubic-bezier(.45,0,.25,1) both; animation-delay: var(--s); }
-      .slide[data-chapter="parcours"].active .pc-reveal.rx { animation: pcRing 0.900s ease-in-out both; animation-delay: var(--s); }
-      .slide[data-chapter="parcours"].active .pc-dash { animation: pcFlux 3.600s linear infinite; }
-      .slide[data-chapter="parcours"].active .pc-arrow, .slide[data-chapter="parcours"].active .pc-lbl { animation: pcFade 0.525s ease both; animation-delay: var(--d); }
+      .slide[data-chapter="parcours"].active .pc-reveal.rr { animation: pcRing 1.200s cubic-bezier(.45,0,.25,1) both; animation-delay: var(--s); }
+      .slide[data-chapter="parcours"].active .pc-reveal.rx { animation: pcRing 0.600s ease-in-out both; animation-delay: var(--s); }
+      .slide[data-chapter="parcours"].active .pc-dash { animation: pcFlux 2.400s linear infinite; }
+      .slide[data-chapter="parcours"].active .pc-arrow, .slide[data-chapter="parcours"].active .pc-lbl { animation: pcFade 0.350s ease both; animation-delay: var(--d); }
       .slide[data-chapter="parcours"].active .pc-lbl { animation-name: pcLbl; }
-      .slide[data-chapter="parcours"].active .pc-hub { animation: pcPop 1.050s cubic-bezier(.3,1.4,.5,1) 20.811s both; }
-      .slide[data-chapter="parcours"].active .pc-hub::after { animation: pcPulse 1.350s ease-out 21.711s 2 both; }
-            .slide[data-chapter="parcours"].active .pc-pop { animation: pcChip 0.525s cubic-bezier(.3,1.4,.5,1) both; animation-delay: var(--d); }
-      .slide[data-chapter="parcours"].active .pc-stag { animation: pcRow 0.525s ease both; animation-delay: var(--d); }
+      .slide[data-chapter="parcours"].active .pc-hub { animation: pcPop 0.700s cubic-bezier(.3,1.4,.5,1) 16.699s both; }
+      .slide[data-chapter="parcours"].active .pc-hub::after { animation: pcPulse 0.900s ease-out 17.299s 2 both; }
+            .slide[data-chapter="parcours"].active .pc-pop { animation: pcChip 0.350s cubic-bezier(.3,1.4,.5,1) both; animation-delay: var(--d); }
+      .slide[data-chapter="parcours"].active .pc-stag { animation: pcRow 0.350s ease both; animation-delay: var(--d); }
       @keyframes pcFade { from { opacity: 0; } }
       @keyframes pcLbl { from { opacity: 0; transform: translateY(-50%) translateX(-4px); } }
       @keyframes pcVeil { from { opacity: .62; } to { opacity: 0; } }
@@ -660,7 +661,7 @@
       @keyframes pcOrbit { from { offset-distance: 0px; } to { offset-distance: 289.027px; } }
       @keyframes pcShrink { from { width: 26px; height: 32px; } to { width: 20px; height: 25px; } }
       @keyframes pcRing { from { stroke-dashoffset: 1; } to { stroke-dashoffset: 0; } }
-      @keyframes pcJourney { 0% { opacity: 0; offset-distance: 0px; animation-timing-function: linear; } 5.082% { opacity: 0; offset-distance: 0px; animation-timing-function: linear; } 7.26% { opacity: 1; offset-distance: 0px; animation-timing-function: linear; } 9.438% { opacity: 1; offset-distance: 0px; animation-timing-function: cubic-bezier(0.4,0.06,0.6,0.94); } 14.393% { opacity: 1; offset-distance: 222.00px; animation-timing-function: linear; } 27.099% { opacity: 1; offset-distance: 222.00px; animation-timing-function: cubic-bezier(0.4,0.06,0.6,0.94); } 32.613% { opacity: 1; offset-distance: 481.00px; animation-timing-function: linear; } 45.319% { opacity: 1; offset-distance: 481.00px; animation-timing-function: cubic-bezier(0.4,0.06,0.6,0.94); } 49.744% { opacity: 1; offset-distance: 668.00px; animation-timing-function: linear; } 50.47% { opacity: 1; offset-distance: 668.00px; animation-timing-function: cubic-bezier(0.4,0.06,0.6,0.94); } 53.036% { opacity: 1; offset-distance: 732.00px; animation-timing-function: linear; } 68.645% { opacity: 1; offset-distance: 732.00px; animation-timing-function: cubic-bezier(0.4,0.06,0.6,0.94); } 74.175% { opacity: 1; offset-distance: 992.00px; animation-timing-function: linear; } 77.805% { opacity: 1; offset-distance: 992.00px; animation-timing-function: cubic-bezier(0.4,0.06,0.6,0.94); } 80.37% { opacity: 1; offset-distance: 1056.00px; animation-timing-function: linear; } 81.822% { opacity: 1; offset-distance: 1056.00px; animation-timing-function: cubic-bezier(0.4,0.06,0.6,0.94); } 86.248% { opacity: 1; offset-distance: 1243.00px; animation-timing-function: linear; } 87.7% { opacity: 1; offset-distance: 1243.00px; animation-timing-function: cubic-bezier(0.4,0.06,0.6,0.94); } 95.408% { opacity: 1; offset-distance: 1647.00px; animation-timing-function: linear; } 97.586% { opacity: 1; offset-distance: 1647.00px; animation-timing-function: cubic-bezier(0.4,0.06,0.6,0.94); } 100.0% { opacity: 1; offset-distance: 1701.00px; animation-timing-function: linear; } }
+      @keyframes pcJourney { 0% { opacity: 0; offset-distance: 0px; animation-timing-function: linear; } 4.217% { opacity: 0; offset-distance: 0px; animation-timing-function: linear; } 6.025% { opacity: 1; offset-distance: 0px; animation-timing-function: linear; } 7.832% { opacity: 1; offset-distance: 0px; animation-timing-function: cubic-bezier(0.4,0.06,0.6,0.94); } 11.944% { opacity: 1; offset-distance: 222.00px; animation-timing-function: linear; } 27.758% { opacity: 1; offset-distance: 222.00px; animation-timing-function: cubic-bezier(0.4,0.06,0.6,0.94); } 32.334% { opacity: 1; offset-distance: 481.00px; animation-timing-function: linear; } 48.149% { opacity: 1; offset-distance: 481.00px; animation-timing-function: cubic-bezier(0.4,0.06,0.6,0.94); } 51.821% { opacity: 1; offset-distance: 668.00px; animation-timing-function: linear; } 52.424% { opacity: 1; offset-distance: 668.00px; animation-timing-function: cubic-bezier(0.4,0.06,0.6,0.94); } 54.552% { opacity: 1; offset-distance: 732.00px; animation-timing-function: linear; } 73.981% { opacity: 1; offset-distance: 732.00px; animation-timing-function: cubic-bezier(0.4,0.06,0.6,0.94); } 78.57% { opacity: 1; offset-distance: 992.00px; animation-timing-function: linear; } 81.582% { opacity: 1; offset-distance: 992.00px; animation-timing-function: cubic-bezier(0.4,0.06,0.6,0.94); } 83.711% { opacity: 1; offset-distance: 1056.00px; animation-timing-function: linear; } 84.916% { opacity: 1; offset-distance: 1056.00px; animation-timing-function: cubic-bezier(0.4,0.06,0.6,0.94); } 88.588% { opacity: 1; offset-distance: 1243.00px; animation-timing-function: linear; } 89.793% { opacity: 1; offset-distance: 1243.00px; animation-timing-function: cubic-bezier(0.4,0.06,0.6,0.94); } 96.189% { opacity: 1; offset-distance: 1647.00px; animation-timing-function: linear; } 97.997% { opacity: 1; offset-distance: 1647.00px; animation-timing-function: cubic-bezier(0.4,0.06,0.6,0.94); } 100.0% { opacity: 1; offset-distance: 1701.00px; animation-timing-function: linear; } }
       @media (prefers-reduced-motion: reduce) {
         .slide[data-chapter="parcours"].active *, .slide[data-chapter="parcours"].active *::before, .slide[data-chapter="parcours"].active *::after { animation: none !important; }
       }
@@ -680,17 +681,17 @@
       <svg class="pc-svg" viewBox="0 0 1260 452" aria-hidden="true">
         <defs>
           <linearGradient id="pc-grad" gradientUnits="userSpaceOnUse" x1="1150" y1="162" x2="1150" y2="340"><stop offset="0" stop-color="#00AEEF"/><stop offset="1" stop-color="#00B08B"/></linearGradient>
-                    <mask id="pcm0" maskUnits="userSpaceOnUse" x="0" y="0" width="1260" height="452"><path class="pc-reveal" pathLength="1" style="--s:1.950s;--m:1.023s" d="M227 330 V108"/></mask>
-          <mask id="pcm1" maskUnits="userSpaceOnUse" x="0" y="0" width="1260" height="452"><path class="pc-reveal" pathLength="1" style="--s:5.598s;--m:1.140s" d="M227 108 H486"/></mask>
-          <mask id="pcm2" maskUnits="userSpaceOnUse" x="0" y="0" width="1260" height="452"><path class="pc-reveal" pathLength="1" style="--s:9.363s;--m:0.915s" d="M486 108 V295"/></mask>
-          <mask id="pcm3" maskUnits="userSpaceOnUse" x="0" y="0" width="1260" height="452"><path class="pc-reveal" pathLength="1" style="--s:10.428s;--m:0.529s" d="M486 295 V359"/></mask>
-          <mask id="pcm4" maskUnits="userSpaceOnUse" x="0" y="0" width="1260" height="452"><path class="pc-reveal" pathLength="1" style="--s:14.183s;--m:1.143s" d="M486 359 H746"/></mask>
-          <mask id="pcm5" maskUnits="userSpaceOnUse" x="0" y="0" width="1260" height="452"><path class="pc-reveal" pathLength="1" style="--s:16.076s;--m:0.529s" d="M746 359 V295"/></mask>
-          <mask id="pcm6" maskUnits="userSpaceOnUse" x="0" y="0" width="1260" height="452"><path class="pc-reveal" pathLength="1" style="--s:16.905s;--m:0.915s" d="M746 295 V108"/></mask>
-          <mask id="pcm7" maskUnits="userSpaceOnUse" x="0" y="0" width="1260" height="452"><path class="pc-reveal" pathLength="1" style="--s:18.120s;--m:1.593s" d="M746 108 H1150"/></mask>
-          <mask id="pcm8" maskUnits="userSpaceOnUse" x="0" y="0" width="1260" height="452"><path class="pc-reveal" pathLength="1" style="--s:20.162s;--m:0.500s" d="M1150 108 V162"/></mask>
-          <mask id="pcmr" maskUnits="userSpaceOnUse" x="0" y="0" width="1260" height="452"><path class="pc-reveal rr" pathLength="1" style="--s:20.661s" d="M1150 162 A46 46 0 1 1 1150 254 A46 46 0 1 1 1150 162"/></mask>
-          <mask id="pcmx" maskUnits="userSpaceOnUse" x="0" y="0" width="1260" height="452"><path class="pc-reveal rx" pathLength="1" style="--s:22.761s" d="M1150 340 V254"/></mask>
+                    <mask id="pcm0" maskUnits="userSpaceOnUse" x="0" y="0" width="1260" height="452"><path class="pc-reveal" pathLength="1" style="--s:1.300s;--m:0.682s" d="M227 330 V108"/></mask>
+          <mask id="pcm1" maskUnits="userSpaceOnUse" x="0" y="0" width="1260" height="452"><path class="pc-reveal" pathLength="1" style="--s:4.607s;--m:0.760s" d="M227 108 H486"/></mask>
+          <mask id="pcm2" maskUnits="userSpaceOnUse" x="0" y="0" width="1260" height="452"><path class="pc-reveal" pathLength="1" style="--s:7.992s;--m:0.610s" d="M486 108 V295"/></mask>
+          <mask id="pcm3" maskUnits="userSpaceOnUse" x="0" y="0" width="1260" height="452"><path class="pc-reveal" pathLength="1" style="--s:8.702s;--m:0.353s" d="M486 295 V359"/></mask>
+          <mask id="pcm4" maskUnits="userSpaceOnUse" x="0" y="0" width="1260" height="452"><path class="pc-reveal" pathLength="1" style="--s:12.280s;--m:0.762s" d="M486 359 H746"/></mask>
+          <mask id="pcm5" maskUnits="userSpaceOnUse" x="0" y="0" width="1260" height="452"><path class="pc-reveal" pathLength="1" style="--s:13.542s;--m:0.353s" d="M746 359 V295"/></mask>
+          <mask id="pcm6" maskUnits="userSpaceOnUse" x="0" y="0" width="1260" height="452"><path class="pc-reveal" pathLength="1" style="--s:14.095s;--m:0.610s" d="M746 295 V108"/></mask>
+          <mask id="pcm7" maskUnits="userSpaceOnUse" x="0" y="0" width="1260" height="452"><path class="pc-reveal" pathLength="1" style="--s:14.905s;--m:1.062s" d="M746 108 H1150"/></mask>
+          <mask id="pcm8" maskUnits="userSpaceOnUse" x="0" y="0" width="1260" height="452"><path class="pc-reveal" pathLength="1" style="--s:16.266s;--m:0.333s" d="M1150 108 V162"/></mask>
+          <mask id="pcmr" maskUnits="userSpaceOnUse" x="0" y="0" width="1260" height="452"><path class="pc-reveal rr" pathLength="1" style="--s:16.599s" d="M1150 162 A46 46 0 1 1 1150 254 A46 46 0 1 1 1150 162"/></mask>
+          <mask id="pcmx" maskUnits="userSpaceOnUse" x="0" y="0" width="1260" height="452"><path class="pc-reveal rx" pathLength="1" style="--s:17.999s" d="M1150 340 V254"/></mask>
         </defs>
                 <path class="pc-dash" mask="url(#pcm0)" d="M227 330 V108"/>
         <path class="pc-dash" mask="url(#pcm1)" d="M227 108 H486"/>
@@ -703,55 +704,55 @@
         <path class="pc-dash" mask="url(#pcm8)" d="M1150 108 V162"/>
         <path class="pc-dash loop" mask="url(#pcmr)" d="M1150 162 A46 46 0 1 1 1150 254 A46 46 0 1 1 1150 162"/>
         <path class="pc-dash loop" mask="url(#pcmx)" d="M1150 340 V254"/>
-                <polygon class="pc-arrow" style="--d:2.667s" points="0,0 -8,-4.5 -8,4.5" transform="translate(227 218) rotate(-90)"/>
-        <polygon class="pc-arrow" style="--d:6.588s" points="0,0 -8,-4.5 -8,4.5" transform="translate(366 108) rotate(0)"/>
-        <polygon class="pc-arrow" style="--d:10.128s" points="0,0 -8,-4.5 -8,4.5" transform="translate(486 272) rotate(90)"/>
-        <polygon class="pc-arrow" style="--d:15.176s" points="0,0 -8,-4.5 -8,4.5" transform="translate(646 359) rotate(0)"/>
-        <polygon class="pc-arrow" style="--d:16.380s" points="0,0 -8,-4.5 -8,4.5" transform="translate(746 326) rotate(-90)"/>
-        <polygon class="pc-arrow" style="--d:17.670s" points="0,0 -8,-4.5 -8,4.5" transform="translate(746 131) rotate(-90)"/>
-        <polygon class="pc-arrow" style="--d:19.562s" points="0,0 -8,-4.5 -8,4.5" transform="translate(1045 108) rotate(0)"/>
-        <polygon class="pc-arrow loop" style="--d:20.511s" points="0,0 -8,-4.5 -8,4.5" transform="translate(1150 162) rotate(90)"/>
-        <polygon class="pc-arrow loop" style="--d:23.511s" points="0,0 -8,-4.5 -8,4.5" transform="translate(1150 257) rotate(-90)"/>
+                <polygon class="pc-arrow" style="--d:1.778s" points="0,0 -8,-4.5 -8,4.5" transform="translate(227 218) rotate(-90)"/>
+        <polygon class="pc-arrow" style="--d:5.267s" points="0,0 -8,-4.5 -8,4.5" transform="translate(366 108) rotate(0)"/>
+        <polygon class="pc-arrow" style="--d:8.502s" points="0,0 -8,-4.5 -8,4.5" transform="translate(486 272) rotate(90)"/>
+        <polygon class="pc-arrow" style="--d:12.942s" points="0,0 -8,-4.5 -8,4.5" transform="translate(646 359) rotate(0)"/>
+        <polygon class="pc-arrow" style="--d:13.745s" points="0,0 -8,-4.5 -8,4.5" transform="translate(746 326) rotate(-90)"/>
+        <polygon class="pc-arrow" style="--d:14.605s" points="0,0 -8,-4.5 -8,4.5" transform="translate(746 131) rotate(-90)"/>
+        <polygon class="pc-arrow" style="--d:15.866s" points="0,0 -8,-4.5 -8,4.5" transform="translate(1045 108) rotate(0)"/>
+        <polygon class="pc-arrow loop" style="--d:16.499s" points="0,0 -8,-4.5 -8,4.5" transform="translate(1150 162) rotate(90)"/>
+        <polygon class="pc-arrow loop" style="--d:18.499s" points="0,0 -8,-4.5 -8,4.5" transform="translate(1150 257) rotate(-90)"/>
       </svg>
 
       <!-- Semaine 1 -->
-      <div class="pc-node pc-glow" style="left:132px;top:85px;width:190px;height:46px;--a:4.774s;--d:4.848s"><span class="pc-ic"><i data-lucide="database-zap"></i></span><span class="pc-tx"><b>Import des DSN, 3 ans</b></span></div>
-      <div class="pc-node pc-glow" style="left:132px;top:308px;width:190px;height:44px;--a:0.450s;--d:1.425s"><span class="pc-ic"><i data-lucide="messages-square"></i></span><span class="pc-tx"><b>Entretien de cadrage</b></span></div>
-      <div class="pc-mock" style="left:132px;top:44px;width:190px;height:132px;--d:2.898s"><div class="pc-bar"><i></i><i></i><i></i><b>DSN 2023 à 2025</b></div>
+      <div class="pc-node pc-glow" style="left:132px;top:85px;width:190px;height:46px;--a:3.783s;--d:3.833s"><span class="pc-ic"><i data-lucide="database-zap"></i></span><span class="pc-tx"><b>Import des DSN, 3 ans</b></span></div>
+      <div class="pc-node pc-glow" style="left:132px;top:308px;width:190px;height:44px;--a:0.300s;--d:0.950s"><span class="pc-ic"><i data-lucide="messages-square"></i></span><span class="pc-tx"><b>Entretien de cadrage</b></span></div>
+      <div class="pc-mock" style="left:132px;top:44px;width:190px;height:132px;--d:1.907s"><div class="pc-bar"><i></i><i></i><i></i><b>DSN 2023 à 2025</b></div>
         <div class="pc-row"><span class="l">Janvier 2023</span><span class="pc-chip ok">Valide</span></div>
-        <div class="pc-row"><span class="l">Mars 2024</span><span class="pc-chip navy pc-pop" style="--d:3.348s">Anomalie</span></div>
+        <div class="pc-row"><span class="l">Mars 2024</span><span class="pc-chip navy pc-pop" style="--d:2.357s">Anomalie</span></div>
         <div class="pc-row"><span class="l">Juin 2024</span><span class="pc-chip ok">Valide</span></div>
-        <div class="pc-row"><span class="l">Février 2025</span><span class="pc-chip navy pc-pop" style="--d:3.723s">Anomalie</span></div>
+        <div class="pc-row"><span class="l">Février 2025</span><span class="pc-chip navy pc-pop" style="--d:2.732s">Anomalie</span></div>
         <div class="pc-foot">36 DSN importées</div></div>
 
       <!-- 4 à 6 semaines -->
-      <div class="pc-node pc-glow" style="left:366px;top:85px;width:240px;height:46px;--a:8.538s;--d:8.613s"><span class="pc-ic"><i data-lucide="list-checks"></i></span><span class="pc-tx"><b>Anomalies classées</b></span></div>
-      <div class="pc-mock" style="left:366px;top:44px;width:240px;height:132px;--d:6.663s"><div class="pc-bar"><i></i><i></i><i></i><b>Anomalies détectées</b></div>
-        <div class="pc-row pc-stag" style="--d:6.888s"><span class="l">Taux AT/MP</span><span class="pc-chip navy">Bloquante</span></div>
-        <div class="pc-row pc-stag" style="--d:7.113s"><span class="l">Réduction générale</span><span class="pc-chip navy">Bloquante</span></div>
-        <div class="pc-row pc-stag" style="--d:7.338s"><span class="l">Versement mobilité</span><span class="pc-chip lt">À vérifier</span></div>
-        <div class="pc-row pc-stag" style="--d:7.563s"><span class="l">Assiette prévoyance</span><span class="pc-chip gr">Information</span></div>
+      <div class="pc-node pc-glow" style="left:366px;top:85px;width:240px;height:46px;--a:7.167s;--d:7.217s"><span class="pc-ic"><i data-lucide="list-checks"></i></span><span class="pc-tx"><b>Anomalies classées</b></span></div>
+      <div class="pc-mock" style="left:366px;top:44px;width:240px;height:132px;--d:5.292s"><div class="pc-bar"><i></i><i></i><i></i><b>Anomalies détectées</b></div>
+        <div class="pc-row pc-stag" style="--d:5.517s"><span class="l">Taux AT/MP</span><span class="pc-chip navy">Bloquante</span></div>
+        <div class="pc-row pc-stag" style="--d:5.742s"><span class="l">Réduction générale</span><span class="pc-chip navy">Bloquante</span></div>
+        <div class="pc-row pc-stag" style="--d:5.967s"><span class="l">Versement mobilité</span><span class="pc-chip lt">À vérifier</span></div>
+        <div class="pc-row pc-stag" style="--d:6.192s"><span class="l">Assiette prévoyance</span><span class="pc-chip gr">Information</span></div>
         <div class="pc-foot">7 anomalies classées</div></div>
-      <div class="pc-lbl" style="left:492px;top:250px;--d:9.828s">Historique fiabilisé</div>
-      <div class="pc-node pc-glow" style="left:366px;top:336px;width:240px;height:46px;--a:13.357s;--d:13.433s"><span class="pc-ic"><i data-lucide="file-spreadsheet"></i></span><span class="pc-tx"><b>Chiffrage des trop-versés</b></span></div>
-      <div class="pc-node pc-glow" style="left:366px;top:272px;width:240px;height:46px;--a:9.828s;--d:10.203s"><span class="pc-ic"><i data-lucide="calculator"></i></span><span class="pc-tx"><b>Recalcul poste par poste</b></span></div>
-      <div class="pc-mock pc-sheet" style="left:366px;top:322px;width:240px;height:111px;transform-origin:50% 33%;--d:10.883s"><div class="pc-bar"><i></i><i></i><i></i><b>Chiffrage des trop-versés</b></div>
-        <div class="pc-row pc-stag" style="--d:10.883s"><span class="l">Réduction générale</span><span class="v">72&nbsp;500 €</span></div>
-        <div class="pc-row pc-stag" style="--d:11.107s"><span class="l">Taux AT/MP</span><span class="v">29&nbsp;200 €</span></div>
-        <div class="pc-row pc-stag" style="--d:11.332s"><span class="l">Autres lignes</span><span class="v">78&nbsp;300 €</span></div>
-        <div class="pc-sum"><span>Total</span><b data-count="180000" data-delay="11407">180&nbsp;000 €</b></div></div>
+      <div class="pc-lbl" style="left:492px;top:250px;--d:8.302s">Historique fiabilisé</div>
+      <div class="pc-node pc-glow" style="left:366px;top:336px;width:240px;height:46px;--a:11.455s;--d:11.505s"><span class="pc-ic"><i data-lucide="file-spreadsheet"></i></span><span class="pc-tx"><b>Chiffrage des trop-versés</b></span></div>
+      <div class="pc-node pc-glow" style="left:366px;top:272px;width:240px;height:46px;--a:8.302s;--d:8.552s"><span class="pc-ic"><i data-lucide="calculator"></i></span><span class="pc-tx"><b>Recalcul poste par poste</b></span></div>
+      <div class="pc-mock pc-sheet" style="left:366px;top:322px;width:240px;height:111px;transform-origin:50% 33%;--d:8.980s"><div class="pc-bar"><i></i><i></i><i></i><b>Chiffrage des trop-versés</b></div>
+        <div class="pc-row pc-stag" style="--d:8.980s"><span class="l">Réduction générale</span><span class="v">72&nbsp;500 €</span></div>
+        <div class="pc-row pc-stag" style="--d:9.205s"><span class="l">Taux AT/MP</span><span class="v">29&nbsp;200 €</span></div>
+        <div class="pc-row pc-stag" style="--d:9.430s"><span class="l">Autres lignes</span><span class="v">78&nbsp;300 €</span></div>
+        <div class="pc-sum"><span>Total</span><b data-count="180000" data-delay="9504">180&nbsp;000 €</b></div></div>
 
       <!-- Après validation -->
-      <div class="pc-node pc-glow" style="left:646px;top:85px;width:200px;height:46px;--a:17.370s;--d:17.745s"><span class="pc-ic"><i data-lucide="file-check"></i></span><span class="pc-tx"><b>Blocs de régularisation générés</b></span></div>
-      <div class="pc-lbl" style="left:758px;top:250px;--d:17.370s">Corrections à déclarer</div>
-      <div class="pc-node pc-glow" style="left:646px;top:267px;width:200px;height:56px;--a:16.155s;--d:16.530s"><span class="pc-ic"><i data-lucide="wrench"></i></span><span class="pc-tx"><b>Correction des paramétrages et transfert de compétences</b></span></div>
-      <div class="pc-node pc-glow" style="left:646px;top:336px;width:200px;height:46px;--a:14.875s;--d:15.250s"><span class="pc-ic"><i data-lucide="landmark"></i></span><span class="pc-tx"><b>Démarches auprès des organismes</b></span></div>
+      <div class="pc-node pc-glow" style="left:646px;top:85px;width:200px;height:46px;--a:14.405s;--d:14.655s"><span class="pc-ic"><i data-lucide="file-check"></i></span><span class="pc-tx"><b>Blocs de régularisation générés</b></span></div>
+      <div class="pc-lbl" style="left:758px;top:250px;--d:14.405s">Corrections à déclarer</div>
+      <div class="pc-node pc-glow" style="left:646px;top:267px;width:200px;height:56px;--a:13.595s;--d:13.845s"><span class="pc-ic"><i data-lucide="wrench"></i></span><span class="pc-tx"><b>Correction des paramétrages et transfert de compétences</b></span></div>
+      <div class="pc-node pc-glow" style="left:646px;top:336px;width:200px;height:46px;--a:12.742s;--d:12.992s"><span class="pc-ic"><i data-lucide="landmark"></i></span><span class="pc-tx"><b>Démarches auprès des organismes</b></span></div>
 
       <!-- Chaque mois -->
-      <div class="pc-node pc-glow" style="left:1045px;top:85px;width:210px;height:46px;--a:19.261s;--d:19.636s"><span class="pc-ic"><i data-lucide="shield-check"></i></span><span class="pc-tx"><b>Contrôle de chaque DSN</b></span></div>
+      <div class="pc-node pc-glow" style="left:1045px;top:85px;width:210px;height:46px;--a:15.666s;--d:15.916s"><span class="pc-ic"><i data-lucide="shield-check"></i></span><span class="pc-tx"><b>Contrôle de chaque DSN</b></span></div>
       <div class="pc-hub"><i data-lucide="repeat"></i><span>Chaque<br>mois</span></div>
-      <div class="pc-lbl" style="left:1162px;top:297px;width:96px;box-sizing:border-box;--d:22.986s">Évolutions réglementaires</div>
-      <div class="pc-node pc-glow" style="left:1045px;top:340px;width:210px;height:62px;--a:22.011s;--d:22.761s"><span class="pc-ic"><i data-lucide="scale"></i></span><span class="pc-tx"><b>Veille réglementaire</b><small>Préparation du contrôle URSSAF</small></span></div>
+      <div class="pc-lbl" style="left:1162px;top:297px;width:96px;box-sizing:border-box;--d:18.149s">Évolutions réglementaires</div>
+      <div class="pc-node pc-glow" style="left:1045px;top:340px;width:210px;height:62px;--a:17.499s;--d:17.999s"><span class="pc-ic"><i data-lucide="scale"></i></span><span class="pc-tx"><b>Veille réglementaire</b><small>Préparation du contrôle URSSAF</small></span></div>
 
       <div class="pc-doc"><span class="tab">DSN</span><i></i><i></i></div>
     </div>
