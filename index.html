@@ -451,7 +451,7 @@
       function fmt(n) { return Math.round(n).toLocaleString('fr-FR').replace(/\s/g, '\u00A0') + ' €'; }
       function final() { cells.forEach(function (c) { c.textContent = fmt(+c.getAttribute('data-count')); }); }
       function run() {
-        if (reduce) return;
+        if (reduce || window.__ayCapture) { final(); return; }
         cancelAnimationFrame(timer);
         var t0 = null, delay = 900, dur = 1800;
         cells.forEach(function (c) { c.textContent = fmt(0); });
@@ -775,7 +775,7 @@
         function fmt(n) { return Math.round(n).toLocaleString('fr-FR').replace(/\s/g, '\u00A0') + ' €'; }
         function final() { cells.forEach(function (c) { c.textContent = fmt(+c.getAttribute('data-count')); }); }
         function run() {
-          if (reduce) return;
+          if (reduce || window.__ayCapture) { final(); return; }
           cancelAnimationFrame(timer);
           var t0 = null, dur = 1800;
           cells.forEach(function (c) { c.textContent = fmt(0); });
