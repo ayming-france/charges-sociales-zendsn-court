@@ -171,8 +171,8 @@
     <style>
       .slide[data-chapter="qui-fait-quoi"] { --qq-teal: color-mix(in srgb, var(--blue-primary) 60%, var(--blue-dark)); }
       .slide[data-chapter="qui-fait-quoi"] .slide-title { margin-bottom: 14px; }
-      .slide[data-chapter="qui-fait-quoi"] .qq-tag { position: absolute; left: 0; top: 362px; width: 1220px; text-align: center; font-size: 20px; font-weight: 600; color: #004A76; }
-      .slide[data-chapter="qui-fait-quoi"].active .qq-tag { animation: qqRise .6s ease 4.2s both; }
+      .slide[data-chapter="qui-fait-quoi"] .qq-tag { position: absolute; left: 0; top: 374px; width: 1220px; text-align: center; font-size: 20px; font-weight: 600; color: #004A76; }
+      .slide[data-chapter="qui-fait-quoi"].active .qq-tag { animation: qqRise .6s ease 4.8s both; }
       @media (prefers-reduced-motion: reduce) { .slide[data-chapter="qui-fait-quoi"] .qq-tag { animation: none !important; } }
       .slide[data-chapter="qui-fait-quoi"] .qq-stage { position: relative; width: 1220px; height: 412px; flex: none; margin: 30px auto 0; text-align: left; font-family: 'Lato', sans-serif; }
       .slide[data-chapter="qui-fait-quoi"] .qq-verb { position: absolute; top: 0; width: 214px; text-align: center; font-size: 12px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; color: var(--qq-teal); }
@@ -186,7 +186,11 @@
       .slide[data-chapter="qui-fait-quoi"] .qq-node { position: absolute; width: 214px; height: 42px; box-sizing: border-box; padding: 0 8px; display: flex; align-items: center; gap: 9px; background: #fff; border: 1px solid rgba(0,174,239,.4); border-radius: 10px; box-shadow: 0 6px 18px rgba(0,174,239,.14), 0 1px 3px rgba(0,74,118,.08); z-index: 2; }
       .slide[data-chapter="qui-fait-quoi"] .qq-ic { flex: none; width: 28px; height: 28px; border-radius: 8px; display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg, var(--blue-primary), var(--gradient-green-end)); }
       .slide[data-chapter="qui-fait-quoi"] .qq-ic i { width: 16px; height: 16px; color: #fff; }
-      .slide[data-chapter="qui-fait-quoi"] .qq-node b { font-size: 12.5px; line-height: 1.2; font-weight: 800; color: var(--blue-dark); white-space: nowrap; }
+      .slide[data-chapter="qui-fait-quoi"] .qq-node b { font-size: 12.5px; line-height: 1.2; font-weight: 800; color: var(--blue-dark); }
+      .slide[data-chapter="qui-fait-quoi"] .qq-fill { border-style: dashed; box-shadow: none; }
+      .slide[data-chapter="qui-fait-quoi"] .qq-fill .qq-ic { background: rgba(0,174,239,.12); }
+      .slide[data-chapter="qui-fait-quoi"] .qq-fill .qq-ic i { color: var(--blue-primary); }
+      .slide[data-chapter="qui-fait-quoi"] .qq-fill b { font-weight: 600; font-style: italic; color: color-mix(in srgb, var(--blue-dark) 55%, #fff); }
 
       /* The DSN, shared data and focal moment */
       .slide[data-chapter="qui-fait-quoi"] .qq-hub { position: absolute; left: 564px; top: 163px; width: 92px; height: 92px; border-radius: 50%; display: flex; flex-direction: column; align-items: center; justify-content: center; background: linear-gradient(135deg, var(--blue-primary), var(--gradient-green-end)); box-shadow: 0 0 0 7px rgba(0,174,239,.12), 0 12px 28px rgba(0,174,239,.3); color: #fff; z-index: 3; }
@@ -204,8 +208,8 @@
       .slide[data-chapter="qui-fait-quoi"].active .qq-logo { animation: qqFade .6s ease both; animation-delay: .1s; }
       .slide[data-chapter="qui-fait-quoi"].active .qq-verb.v2, .slide[data-chapter="qui-fait-quoi"].active .qq-logo.l2 { animation-delay: 1.7s; }
       .slide[data-chapter="qui-fait-quoi"].active .qq-node { animation: qqLight .5s ease both; animation-delay: var(--d); }
-      .slide[data-chapter="qui-fait-quoi"].active .qq-hub { animation: qqHub .5s cubic-bezier(.3,1.4,.5,1) .9s both, qqGlow .8s ease 1.8s both, qqGlow .8s ease 2.4s both, qqGlow .8s ease 3.0s both, qqGlow .8s ease 3.6s both; }
-      .slide[data-chapter="qui-fait-quoi"].active .qq-hub::after { animation: qqRing .8s ease-out 1.8s both, qqRing .8s ease-out 2.4s both, qqRing .8s ease-out 3.0s both, qqRing .8s ease-out 3.6s both; }
+      .slide[data-chapter="qui-fait-quoi"].active .qq-hub { animation: qqHub .5s cubic-bezier(.3,1.4,.5,1) .9s both, qqGlow .8s ease 1.8s both, qqGlow .8s ease 2.4s both, qqGlow .8s ease 3.0s both, qqGlow .8s ease 3.6s both, qqGlow .8s ease 4.2s both; }
+      .slide[data-chapter="qui-fait-quoi"].active .qq-hub::after { animation: qqRing .8s ease-out 1.8s both, qqRing .8s ease-out 2.4s both, qqRing .8s ease-out 3.0s both, qqRing .8s ease-out 3.6s both, qqRing .8s ease-out 4.2s both; }
       .slide[data-chapter="qui-fait-quoi"].active .qq-flow { animation: qqDrawR .8s cubic-bezier(.4,0,.2,1) both; animation-delay: var(--d); }
       .slide[data-chapter="qui-fait-quoi"].active .qq-flow.rev { animation-name: qqDrawL; }
       .slide[data-chapter="qui-fait-quoi"].active .qq-dash { animation: qqFlux 2.2s linear infinite; }
@@ -229,10 +233,11 @@
 
     <div class="qq-stage">
       <svg class="qq-svg" viewBox="0 0 1220 412" aria-hidden="true">
-        <g class="qq-flow" style="--d:1.4s;--c:#00AEEF"><path class="qq-dash" d="M220 113 C420 113 470 209 564 209 L656 209 C750 209 800 113 1000 113"/><path class="qq-chev" d="M994 107 L1001 113 L994 119"/></g>
-        <g class="qq-flow rev" style="--d:2.0s;--c:#00AEEF"><path class="qq-dash" d="M1000 241 C800 241 760 209 656 209 L564 209 C470 209 420 241 220 241"/><path class="qq-chev" d="M226 235 L219 241 L226 247"/></g>
-        <g class="qq-flow" style="--d:2.6s;--c:#00AEEF"><path class="qq-dash" d="M220 177 C400 177 460 209 564 209 L656 209 C760 209 830 305 1000 305"/><path class="qq-chev" d="M994 299 L1001 305 L994 311"/></g>
-        <g class="qq-flow" style="--d:3.2s;--c:#00AEEF"><path class="qq-dash" d="M220 305 C420 305 470 209 564 209 L656 209 C770 209 800 177 1000 177"/><path class="qq-chev" d="M994 171 L1001 177 L994 183"/></g>
+        <g class="qq-flow" style="--d:1.4s;--c:#00AEEF"><path class="qq-dash" d="M220 105 C420 105 470 209 564 209 L656 209 C750 209 800 105 1000 105"/><path class="qq-chev" d="M994 99 L1001 105 L994 111"/></g>
+        <g class="qq-flow rev" style="--d:2.0s;--c:#00AEEF"><path class="qq-dash" d="M1000 161 C800 161 760 209 656 209 L564 209 C470 209 420 217 220 217"/><path class="qq-chev" d="M226 211 L219 217 L226 223"/></g>
+        <g class="qq-flow" style="--d:2.6s;--c:#00AEEF"><path class="qq-dash" d="M220 161 C420 161 470 209 564 209 L656 209 C750 209 800 273 1000 273"/><path class="qq-chev" d="M994 267 L1001 273 L994 279"/></g>
+        <g class="qq-flow" style="--d:3.2s;--c:#00AEEF"><path class="qq-dash" d="M220 273 C420 273 470 209 564 209 L656 209 C750 209 800 217 1000 217"/><path class="qq-chev" d="M994 211 L1001 217 L994 223"/></g>
+        <g class="qq-flow" style="--d:3.8s;--c:#00AEEF"><path class="qq-dash" d="M220 329 C420 329 470 209 564 209 L656 209 C750 209 800 329 1000 329"/><path class="qq-chev" d="M994 323 L1001 329 L994 335"/></g>
       </svg>
 
       <div class="qq-verb" style="left:0">Fiabiliser</div>
@@ -240,23 +245,26 @@
       <div class="qq-verb v2" style="left:1006px">Optimiser</div>
       <div class="qq-logo l2" style="left:1006px"><img src="https://raw.githubusercontent.com/ayming-france/assets/main/logos/ayming-logo.png" alt="Ayming" style="width:122px"></div>
 
-      <div class="qq-node" style="left:0;top:92px;--d:.6s"><span class="qq-ic"><i data-lucide="shield-check"></i></span><b>Analyse avant dépôt</b></div>
-      <div class="qq-node" style="left:0;top:156px;--d:.75s"><span class="qq-ic"><i data-lucide="wrench"></i></span><b>Anomalies corrigées</b></div>
-      <div class="qq-node" style="left:0;top:220px;--d:.9s"><span class="qq-ic"><i data-lucide="file-check"></i></span><b>Blocs de régularisation</b></div>
-      <div class="qq-node" style="left:0;top:284px;--d:1.05s"><span class="qq-ic"><i data-lucide="chart-column"></i></span><b>BDESE et bilan social</b></div>
+      <div class="qq-node qq-fill" style="left:0;top:84px;--d:0.6s"><span class="qq-ic"><i data-lucide="pencil-line"></i></span><b>À compléter par ZenDSN</b></div>
+      <div class="qq-node qq-fill" style="left:0;top:140px;--d:0.75s"><span class="qq-ic"><i data-lucide="pencil-line"></i></span><b>À compléter par ZenDSN</b></div>
+      <div class="qq-node qq-fill" style="left:0;top:196px;--d:2.8s"><span class="qq-ic"><i data-lucide="pencil-line"></i></span><b>À compléter par ZenDSN</b></div>
+      <div class="qq-node qq-fill" style="left:0;top:252px;--d:0.9s"><span class="qq-ic"><i data-lucide="pencil-line"></i></span><b>À compléter par ZenDSN</b></div>
+      <div class="qq-node qq-fill" style="left:0;top:308px;--d:1.05s"><span class="qq-ic"><i data-lucide="pencil-line"></i></span><b>À compléter par ZenDSN</b></div>
 
-      <div class="qq-node" style="left:1006px;top:92px;--d:2.2s"><span class="qq-ic"><i data-lucide="search"></i></span><b>Analyse des données</b></div>
-      <div class="qq-node" style="left:1006px;top:156px;--d:3.5s"><span class="qq-ic"><i data-lucide="target"></i></span><b>Leviers identifiés</b></div>
-      <div class="qq-node" style="left:1006px;top:220px;--d:1.8s"><span class="qq-ic"><i data-lucide="banknote"></i></span><b>Montants récupérés</b></div>
-      <div class="qq-node" style="left:1006px;top:284px;--d:3.0s"><span class="qq-ic"><i data-lucide="refresh-cw"></i></span><b>Suivi dans la durée</b></div>
+      <div class="qq-node" style="left:1006px;top:84px;--d:2.2s"><span class="qq-ic"><i data-lucide="piggy-bank"></i></span><b>Optimisation des charges sociales</b></div>
+      <div class="qq-node" style="left:1006px;top:140px;--d:1.8s"><span class="qq-ic"><i data-lucide="wallet"></i></span><b>Pilotage des IJSS subrogées</b></div>
+      <div class="qq-node" style="left:1006px;top:196px;--d:4.0s"><span class="qq-ic"><i data-lucide="calendar-clock"></i></span><b>Gestion des arrêts de travail</b></div>
+      <div class="qq-node" style="left:1006px;top:252px;--d:3.4s"><span class="qq-ic"><i data-lucide="file-search"></i></span><b>Accompagnement au contrôle URSSAF</b></div>
+      <div class="qq-node" style="left:1006px;top:308px;--d:4.6s"><span class="qq-ic"><i data-lucide="user-plus"></i></span><b>Obtention aides à l’embauche</b></div>
 
       <div class="qq-hub"><strong>La DSN</strong><em>Analyser</em></div>
 
 
-      <div class="qq-dot" style="offset-path:path('M220 113 C420 113 470 209 564 209 L656 209 C750 209 800 113 1000 113');--t:5.0s;--c:#00AEEF"></div>
-      <div class="qq-dot" style="offset-path:path('M1000 241 C800 241 760 209 656 209 L564 209 C470 209 420 241 220 241');--t:6.2s;--c:#00AEEF"></div>
-      <div class="qq-dot" style="offset-path:path('M220 177 C400 177 460 209 564 209 L656 209 C760 209 830 305 1000 305');--t:5.6s;--c:#00AEEF"></div>
-      <div class="qq-dot" style="offset-path:path('M220 305 C420 305 470 209 564 209 L656 209 C770 209 800 177 1000 177');--t:6.6s;--c:#00AEEF"></div>
+      <div class="qq-dot" style="offset-path:path('M220 105 C420 105 470 209 564 209 L656 209 C750 209 800 105 1000 105');--t:5.0s;--c:#00AEEF"></div>
+      <div class="qq-dot" style="offset-path:path('M1000 161 C800 161 760 209 656 209 L564 209 C470 209 420 217 220 217');--t:6.2s;--c:#00AEEF"></div>
+      <div class="qq-dot" style="offset-path:path('M220 161 C420 161 470 209 564 209 L656 209 C750 209 800 273 1000 273');--t:5.6s;--c:#00AEEF"></div>
+      <div class="qq-dot" style="offset-path:path('M220 273 C420 273 470 209 564 209 L656 209 C750 209 800 217 1000 217');--t:6.6s;--c:#00AEEF"></div>
+      <div class="qq-dot" style="offset-path:path('M220 329 C420 329 470 209 564 209 L656 209 C750 209 800 329 1000 329');--t:7.0s;--c:#00AEEF"></div>
       <div class="qq-tag">Deux expertises complémentaires</div>
     </div>
   </div>
