@@ -78,7 +78,7 @@
       .next-step { margin-top: var(--space-34); padding: var(--space-18) var(--space-26); border-radius: var(--radius-14); background: linear-gradient(90deg, rgba(var(--blue-primary-rgb), 0.10), rgba(var(--gradient-green-end-rgb), 0.10)); border: 1px solid rgba(var(--blue-primary-rgb), 0.35); font-size: var(--font-18); font-weight: var(--weight-bold); color: var(--blue-dark); text-align: center; }
   </style>
 </head>
-<body data-audience="client">
+<body data-audience="client" data-no-partners>
 
   <nav class="chapter-nav">
     <div class="nav-toggle"><span></span><span></span><span></span></div>
@@ -101,8 +101,7 @@
     </div>
     <div class="nav-section">
       <div class="nav-section-title">Démarrer</div>
-      <div class="nav-item" data-slide="7"><span class="nav-item-number">08</span>Clients</div>
-      <div class="nav-item" data-slide="8"><span class="nav-item-number">09</span>Démarrage</div>
+      <div class="nav-item" data-slide="7"><span class="nav-item-number">08</span>Démarrage</div>
     </div>
   </nav>
 
@@ -623,31 +622,32 @@
 
       /* The one travelling DSN chip, it passes BEHIND cards */
       .slide[data-chapter="parcours"] .pc-doc { position: absolute; left: 0; top: 0; width: 20px; height: 25px; box-sizing: border-box; background: #fff; border: 1.5px solid var(--blue-primary); border-radius: 4px; box-shadow: 0 4px 12px rgba(0,74,118,.25); overflow: hidden; z-index: 3; offset-path: path("M227 330 V108 H486 V359 H746 V108 H1150 V162 A46 46 0 1 1 1150 254 A46 46 0 1 1 1150 162"); offset-rotate: 0deg; offset-anchor: 50% 50%; offset-distance: 1773.0px; }
+      .slide[data-chapter="parcours"]:not(.active) .pc-doc { opacity: 0; }
       .slide[data-chapter="parcours"] .pc-doc .tab { display: block; height: 10px; background: linear-gradient(90deg, var(--blue-primary), var(--gradient-green-end)); color: #fff; font-size: 7px; font-weight: 800; letter-spacing: .6px; line-height: 10px; text-align: center; }
       .slide[data-chapter="parcours"] .pc-doc i { display: block; height: 2px; margin: 4px 4px 0; border-radius: 2px; background: rgba(0,74,118,.22); }
 
       /* Animation, keyed on the active slide. Base styles above are the final frame. */
-      .slide[data-chapter="parcours"].active .pc-doc { animation: pcJourney 9.324s linear both, pcOrbit 4.6s linear 9.374s infinite both, pcShrink .5s ease-in-out 9.024s both; animation-composition: replace, add, replace; will-change: offset-distance; }
-      .slide[data-chapter="parcours"].active .pc-node { animation: pcAppear .5s ease-out both; animation-delay: var(--a); }
-      .slide[data-chapter="parcours"].active .pc-mock, .slide[data-chapter="parcours"].active .pc-res { animation: pcLife 1.700s linear both; animation-delay: var(--d); }
-      .slide[data-chapter="parcours"].active .pc-sheet { animation-name: pcLifeS; animation-duration: 2.100s; }
-      .slide[data-chapter="parcours"].active .pc-note { animation: pcNote 4.723s linear 1.633s both; }
+      .slide[data-chapter="parcours"].active .pc-doc { animation: pcJourney 14.436s linear both, pcOrbit 7.500s linear 14.511s infinite both, pcShrink 0.750s ease-in-out 13.986s both; animation-composition: replace, add, replace; will-change: offset-distance; }
+      .slide[data-chapter="parcours"].active .pc-node { animation: pcAppear 0.750s ease-out both; animation-delay: var(--a); }
+      .slide[data-chapter="parcours"].active .pc-mock, .slide[data-chapter="parcours"].active .pc-res { animation: pcLife 2.550s linear both; animation-delay: var(--d); }
+      .slide[data-chapter="parcours"].active .pc-sheet { animation-name: pcLifeS; animation-duration: 3.150s; }
+      .slide[data-chapter="parcours"].active .pc-note { animation: pcNote 7.085s linear 2.898s both; }
       @keyframes pcLife { 0% { opacity: 0; transform: scale(.88) translateY(10px); animation-timing-function: cubic-bezier(.3,1.3,.5,1); } 23.53% { opacity: 1; transform: none; } 70.59% { opacity: 1; transform: none; animation-timing-function: ease-in; } 100% { opacity: 0; transform: scale(.3); } }
       @keyframes pcLifeS { 0% { opacity: 0; transform: scale(.88) translateY(10px); animation-timing-function: cubic-bezier(.3,1.3,.5,1); } 19.05% { opacity: 1; transform: none; } 76.19% { opacity: 1; transform: none; animation-timing-function: ease-in; } 100% { opacity: 0; transform: scale(.3); } }
       @keyframes pcAppear { from { opacity: 0; transform: translateY(10px); } }
       @keyframes pcNote { 0% { opacity: 0; } 4% { opacity: .8; } 96% { opacity: .8; } 100% { opacity: 0; } }
-      .slide[data-chapter="parcours"].active .pc-glow::after { animation: pcGlow 1.6s ease-out both; animation-delay: var(--d); }
-      .slide[data-chapter="parcours"].active .pc-head, .slide[data-chapter="parcours"].active .pc-logo, .slide[data-chapter="parcours"].active .pc-sep, .slide[data-chapter="parcours"].active .pc-eyebrow, .slide[data-chapter="parcours"].active .pc-nonote { animation: pcFade .6s ease both; animation-delay: .1s; }
+      .slide[data-chapter="parcours"].active .pc-glow::after { animation: pcGlow 2.400s ease-out both; animation-delay: var(--d); }
+      .slide[data-chapter="parcours"].active .pc-head, .slide[data-chapter="parcours"].active .pc-logo, .slide[data-chapter="parcours"].active .pc-sep, .slide[data-chapter="parcours"].active .pc-eyebrow, .slide[data-chapter="parcours"].active .pc-nonote { animation: pcFade 0.900s ease both; animation-delay: 0.150s; }
       .slide[data-chapter="parcours"].active .pc-reveal:not(.rr):not(.rx) { animation: pcRing var(--m) cubic-bezier(0.4,0.06,0.6,0.94) both; animation-delay: var(--s); }
-      .slide[data-chapter="parcours"].active .pc-reveal.rr { animation: pcRing 1.2s cubic-bezier(.45,0,.25,1) both; animation-delay: var(--s); }
-      .slide[data-chapter="parcours"].active .pc-reveal.rx { animation: pcRing 0.6s ease-in-out both; animation-delay: var(--s); }
-      .slide[data-chapter="parcours"].active .pc-dash { animation: pcFlux 2.4s linear infinite; }
-      .slide[data-chapter="parcours"].active .pc-arrow, .slide[data-chapter="parcours"].active .pc-lbl { animation: pcFade .35s ease both; animation-delay: var(--d); }
+      .slide[data-chapter="parcours"].active .pc-reveal.rr { animation: pcRing 1.800s cubic-bezier(.45,0,.25,1) both; animation-delay: var(--s); }
+      .slide[data-chapter="parcours"].active .pc-reveal.rx { animation: pcRing 0.900s ease-in-out both; animation-delay: var(--s); }
+      .slide[data-chapter="parcours"].active .pc-dash { animation: pcFlux 3.600s linear infinite; }
+      .slide[data-chapter="parcours"].active .pc-arrow, .slide[data-chapter="parcours"].active .pc-lbl { animation: pcFade 0.525s ease both; animation-delay: var(--d); }
       .slide[data-chapter="parcours"].active .pc-lbl { animation-name: pcLbl; }
-      .slide[data-chapter="parcours"].active .pc-hub { animation: pcPop .7s cubic-bezier(.3,1.4,.5,1) 9.424s both; }
-      .slide[data-chapter="parcours"].active .pc-hub::after { animation: pcPulse .9s ease-out 10.024s 2 both; }
-            .slide[data-chapter="parcours"].active .pc-pop { animation: pcChip .35s cubic-bezier(.3,1.4,.5,1) both; animation-delay: var(--d); }
-      .slide[data-chapter="parcours"].active .pc-stag { animation: pcRow .35s ease both; animation-delay: var(--d); }
+      .slide[data-chapter="parcours"].active .pc-hub { animation: pcPop 1.050s cubic-bezier(.3,1.4,.5,1) 14.586s both; }
+      .slide[data-chapter="parcours"].active .pc-hub::after { animation: pcPulse 1.350s ease-out 15.486s 2 both; }
+            .slide[data-chapter="parcours"].active .pc-pop { animation: pcChip 0.525s cubic-bezier(.3,1.4,.5,1) both; animation-delay: var(--d); }
+      .slide[data-chapter="parcours"].active .pc-stag { animation: pcRow 0.525s ease both; animation-delay: var(--d); }
       @keyframes pcFade { from { opacity: 0; } }
       @keyframes pcLbl { from { opacity: 0; transform: translateY(-50%) translateX(-4px); } }
       @keyframes pcVeil { from { opacity: .62; } to { opacity: 0; } }
@@ -660,7 +660,7 @@
       @keyframes pcOrbit { from { offset-distance: 0px; } to { offset-distance: 289.027px; } }
       @keyframes pcShrink { from { width: 26px; height: 32px; } to { width: 20px; height: 25px; } }
       @keyframes pcRing { from { stroke-dashoffset: 1; } to { stroke-dashoffset: 0; } }
-      @keyframes pcJourney { 0% { opacity: 0; offset-distance: 0px; animation-timing-function: linear; } 7.508% { opacity: 1; offset-distance: 0px; animation-timing-function: linear; } 10.725% { opacity: 1; offset-distance: 0px; animation-timing-function: cubic-bezier(0.4,0.06,0.6,0.94); } 18.045% { opacity: 1; offset-distance: 222.00px; animation-timing-function: linear; } 22.335% { opacity: 1; offset-distance: 222.00px; animation-timing-function: cubic-bezier(0.4,0.06,0.6,0.94); } 30.482% { opacity: 1; offset-distance: 481.00px; animation-timing-function: linear; } 34.772% { opacity: 1; offset-distance: 481.00px; animation-timing-function: cubic-bezier(0.4,0.06,0.6,0.94); } 41.31% { opacity: 1; offset-distance: 668.00px; animation-timing-function: linear; } 42.383% { opacity: 1; offset-distance: 668.00px; animation-timing-function: cubic-bezier(0.4,0.06,0.6,0.94); } 46.172% { opacity: 1; offset-distance: 732.00px; animation-timing-function: linear; } 53.68% { opacity: 1; offset-distance: 732.00px; animation-timing-function: cubic-bezier(0.4,0.06,0.6,0.94); } 61.849% { opacity: 1; offset-distance: 992.00px; animation-timing-function: linear; } 67.212% { opacity: 1; offset-distance: 992.00px; animation-timing-function: cubic-bezier(0.4,0.06,0.6,0.94); } 71.001% { opacity: 1; offset-distance: 1056.00px; animation-timing-function: linear; } 73.147% { opacity: 1; offset-distance: 1056.00px; animation-timing-function: cubic-bezier(0.4,0.06,0.6,0.94); } 79.684% { opacity: 1; offset-distance: 1243.00px; animation-timing-function: linear; } 81.83% { opacity: 1; offset-distance: 1243.00px; animation-timing-function: cubic-bezier(0.4,0.06,0.6,0.94); } 93.216% { opacity: 1; offset-distance: 1647.00px; animation-timing-function: linear; } 96.434% { opacity: 1; offset-distance: 1647.00px; animation-timing-function: cubic-bezier(0.4,0.06,0.6,0.94); } 100.0% { opacity: 1; offset-distance: 1701.00px; animation-timing-function: linear; } }
+      @keyframes pcJourney { 0% { opacity: 0; offset-distance: 0px; animation-timing-function: linear; } 7.274% { opacity: 0; offset-distance: 0px; animation-timing-function: linear; } 10.391% { opacity: 1; offset-distance: 0px; animation-timing-function: linear; } 13.508% { opacity: 1; offset-distance: 0px; animation-timing-function: cubic-bezier(0.4,0.06,0.6,0.94); } 20.6% { opacity: 1; offset-distance: 222.00px; animation-timing-function: linear; } 24.756% { opacity: 1; offset-distance: 222.00px; animation-timing-function: cubic-bezier(0.4,0.06,0.6,0.94); } 32.649% { opacity: 1; offset-distance: 481.00px; animation-timing-function: linear; } 36.806% { opacity: 1; offset-distance: 481.00px; animation-timing-function: cubic-bezier(0.4,0.06,0.6,0.94); } 43.14% { opacity: 1; offset-distance: 668.00px; animation-timing-function: linear; } 44.179% { opacity: 1; offset-distance: 668.00px; animation-timing-function: cubic-bezier(0.4,0.06,0.6,0.94); } 47.85% { opacity: 1; offset-distance: 732.00px; animation-timing-function: linear; } 55.124% { opacity: 1; offset-distance: 732.00px; animation-timing-function: cubic-bezier(0.4,0.06,0.6,0.94); } 63.038% { opacity: 1; offset-distance: 992.00px; animation-timing-function: linear; } 68.234% { opacity: 1; offset-distance: 992.00px; animation-timing-function: cubic-bezier(0.4,0.06,0.6,0.94); } 71.905% { opacity: 1; offset-distance: 1056.00px; animation-timing-function: linear; } 73.984% { opacity: 1; offset-distance: 1056.00px; animation-timing-function: cubic-bezier(0.4,0.06,0.6,0.94); } 80.318% { opacity: 1; offset-distance: 1243.00px; animation-timing-function: linear; } 82.396% { opacity: 1; offset-distance: 1243.00px; animation-timing-function: cubic-bezier(0.4,0.06,0.6,0.94); } 93.428% { opacity: 1; offset-distance: 1647.00px; animation-timing-function: linear; } 96.545% { opacity: 1; offset-distance: 1647.00px; animation-timing-function: cubic-bezier(0.4,0.06,0.6,0.94); } 100.0% { opacity: 1; offset-distance: 1701.00px; animation-timing-function: linear; } }
       @media (prefers-reduced-motion: reduce) {
         .slide[data-chapter="parcours"].active *, .slide[data-chapter="parcours"].active *::before, .slide[data-chapter="parcours"].active *::after { animation: none !important; }
       }
@@ -668,7 +668,7 @@
 
     <div class="pc-stage">
       <div class="pc-sep"></div>
-      <div class="pc-logo" style="top:84px"><img src="https://ayming-france.github.io/assets/imagery/charges-sociales-zendsn/zendsn-logo.png" alt="ZenDSN"></div>
+      <div class="pc-logo" style="top:84px"><img src="../slides/img/zendsn-logo.png" alt="ZenDSN"></div>
       <div class="pc-logo" style="top:306px"><img src="https://raw.githubusercontent.com/ayming-france/assets/main/logos/ayming-logo.png" alt="Ayming"></div>
       <div class="pc-note">Exemple illustratif</div>
 
@@ -680,17 +680,17 @@
       <svg class="pc-svg" viewBox="0 0 1260 452" aria-hidden="true">
         <defs>
           <linearGradient id="pc-grad" gradientUnits="userSpaceOnUse" x1="1150" y1="162" x2="1150" y2="340"><stop offset="0" stop-color="#00AEEF"/><stop offset="1" stop-color="#00B08B"/></linearGradient>
-                    <mask id="pcm0" maskUnits="userSpaceOnUse" x="0" y="0" width="1260" height="452"><path class="pc-reveal" pathLength="1" style="--s:1.000s;--m:0.682s" d="M227 330 V108"/></mask>
-          <mask id="pcm1" maskUnits="userSpaceOnUse" x="0" y="0" width="1260" height="452"><path class="pc-reveal" pathLength="1" style="--s:2.083s;--m:0.760s" d="M227 108 H486"/></mask>
-          <mask id="pcm2" maskUnits="userSpaceOnUse" x="0" y="0" width="1260" height="452"><path class="pc-reveal" pathLength="1" style="--s:3.242s;--m:0.610s" d="M486 108 V295"/></mask>
-          <mask id="pcm3" maskUnits="userSpaceOnUse" x="0" y="0" width="1260" height="452"><path class="pc-reveal" pathLength="1" style="--s:3.952s;--m:0.353s" d="M486 295 V359"/></mask>
-          <mask id="pcm4" maskUnits="userSpaceOnUse" x="0" y="0" width="1260" height="452"><path class="pc-reveal" pathLength="1" style="--s:5.005s;--m:0.762s" d="M486 359 H746"/></mask>
-          <mask id="pcm5" maskUnits="userSpaceOnUse" x="0" y="0" width="1260" height="452"><path class="pc-reveal" pathLength="1" style="--s:6.267s;--m:0.353s" d="M746 359 V295"/></mask>
-          <mask id="pcm6" maskUnits="userSpaceOnUse" x="0" y="0" width="1260" height="452"><path class="pc-reveal" pathLength="1" style="--s:6.820s;--m:0.610s" d="M746 295 V108"/></mask>
-          <mask id="pcm7" maskUnits="userSpaceOnUse" x="0" y="0" width="1260" height="452"><path class="pc-reveal" pathLength="1" style="--s:7.630s;--m:1.062s" d="M746 108 H1150"/></mask>
-          <mask id="pcm8" maskUnits="userSpaceOnUse" x="0" y="0" width="1260" height="452"><path class="pc-reveal" pathLength="1" style="--s:8.991s;--m:0.333s" d="M1150 108 V162"/></mask>
-          <mask id="pcmr" maskUnits="userSpaceOnUse" x="0" y="0" width="1260" height="452"><path class="pc-reveal rr" pathLength="1" style="--s:9.324s" d="M1150 162 A46 46 0 1 1 1150 254 A46 46 0 1 1 1150 162"/></mask>
-          <mask id="pcmx" maskUnits="userSpaceOnUse" x="0" y="0" width="1260" height="452"><path class="pc-reveal rx" pathLength="1" style="--s:10.724s" d="M1150 340 V254"/></mask>
+                    <mask id="pcm0" maskUnits="userSpaceOnUse" x="0" y="0" width="1260" height="452"><path class="pc-reveal" pathLength="1" style="--s:1.950s;--m:1.023s" d="M227 330 V108"/></mask>
+          <mask id="pcm1" maskUnits="userSpaceOnUse" x="0" y="0" width="1260" height="452"><path class="pc-reveal" pathLength="1" style="--s:3.573s;--m:1.140s" d="M227 108 H486"/></mask>
+          <mask id="pcm2" maskUnits="userSpaceOnUse" x="0" y="0" width="1260" height="452"><path class="pc-reveal" pathLength="1" style="--s:5.313s;--m:0.915s" d="M486 108 V295"/></mask>
+          <mask id="pcm3" maskUnits="userSpaceOnUse" x="0" y="0" width="1260" height="452"><path class="pc-reveal" pathLength="1" style="--s:6.378s;--m:0.529s" d="M486 295 V359"/></mask>
+          <mask id="pcm4" maskUnits="userSpaceOnUse" x="0" y="0" width="1260" height="452"><path class="pc-reveal" pathLength="1" style="--s:7.957s;--m:1.143s" d="M486 359 H746"/></mask>
+          <mask id="pcm5" maskUnits="userSpaceOnUse" x="0" y="0" width="1260" height="452"><path class="pc-reveal" pathLength="1" style="--s:9.851s;--m:0.529s" d="M746 359 V295"/></mask>
+          <mask id="pcm6" maskUnits="userSpaceOnUse" x="0" y="0" width="1260" height="452"><path class="pc-reveal" pathLength="1" style="--s:10.680s;--m:0.915s" d="M746 295 V108"/></mask>
+          <mask id="pcm7" maskUnits="userSpaceOnUse" x="0" y="0" width="1260" height="452"><path class="pc-reveal" pathLength="1" style="--s:11.895s;--m:1.593s" d="M746 108 H1150"/></mask>
+          <mask id="pcm8" maskUnits="userSpaceOnUse" x="0" y="0" width="1260" height="452"><path class="pc-reveal" pathLength="1" style="--s:13.937s;--m:0.500s" d="M1150 108 V162"/></mask>
+          <mask id="pcmr" maskUnits="userSpaceOnUse" x="0" y="0" width="1260" height="452"><path class="pc-reveal rr" pathLength="1" style="--s:14.436s" d="M1150 162 A46 46 0 1 1 1150 254 A46 46 0 1 1 1150 162"/></mask>
+          <mask id="pcmx" maskUnits="userSpaceOnUse" x="0" y="0" width="1260" height="452"><path class="pc-reveal rx" pathLength="1" style="--s:16.536s" d="M1150 340 V254"/></mask>
         </defs>
                 <path class="pc-dash" mask="url(#pcm0)" d="M227 330 V108"/>
         <path class="pc-dash" mask="url(#pcm1)" d="M227 108 H486"/>
@@ -703,55 +703,55 @@
         <path class="pc-dash" mask="url(#pcm8)" d="M1150 108 V162"/>
         <path class="pc-dash loop" mask="url(#pcmr)" d="M1150 162 A46 46 0 1 1 1150 254 A46 46 0 1 1 1150 162"/>
         <path class="pc-dash loop" mask="url(#pcmx)" d="M1150 340 V254"/>
-                <polygon class="pc-arrow" style="--d:1.478s" points="0,0 -8,-4.5 -8,4.5" transform="translate(227 218) rotate(-90)"/>
-        <polygon class="pc-arrow" style="--d:2.742s" points="0,0 -8,-4.5 -8,4.5" transform="translate(366 108) rotate(0)"/>
-        <polygon class="pc-arrow" style="--d:3.752s" points="0,0 -8,-4.5 -8,4.5" transform="translate(486 272) rotate(90)"/>
-        <polygon class="pc-arrow" style="--d:5.667s" points="0,0 -8,-4.5 -8,4.5" transform="translate(646 359) rotate(0)"/>
-        <polygon class="pc-arrow" style="--d:6.470s" points="0,0 -8,-4.5 -8,4.5" transform="translate(746 326) rotate(-90)"/>
-        <polygon class="pc-arrow" style="--d:7.330s" points="0,0 -8,-4.5 -8,4.5" transform="translate(746 131) rotate(-90)"/>
-        <polygon class="pc-arrow" style="--d:8.591s" points="0,0 -8,-4.5 -8,4.5" transform="translate(1045 108) rotate(0)"/>
-        <polygon class="pc-arrow loop" style="--d:9.224s" points="0,0 -8,-4.5 -8,4.5" transform="translate(1150 162) rotate(90)"/>
-        <polygon class="pc-arrow loop" style="--d:11.224s" points="0,0 -8,-4.5 -8,4.5" transform="translate(1150 257) rotate(-90)"/>
+                <polygon class="pc-arrow" style="--d:2.667s" points="0,0 -8,-4.5 -8,4.5" transform="translate(227 218) rotate(-90)"/>
+        <polygon class="pc-arrow" style="--d:4.563s" points="0,0 -8,-4.5 -8,4.5" transform="translate(366 108) rotate(0)"/>
+        <polygon class="pc-arrow" style="--d:6.078s" points="0,0 -8,-4.5 -8,4.5" transform="translate(486 272) rotate(90)"/>
+        <polygon class="pc-arrow" style="--d:8.950s" points="0,0 -8,-4.5 -8,4.5" transform="translate(646 359) rotate(0)"/>
+        <polygon class="pc-arrow" style="--d:10.155s" points="0,0 -8,-4.5 -8,4.5" transform="translate(746 326) rotate(-90)"/>
+        <polygon class="pc-arrow" style="--d:11.445s" points="0,0 -8,-4.5 -8,4.5" transform="translate(746 131) rotate(-90)"/>
+        <polygon class="pc-arrow" style="--d:13.337s" points="0,0 -8,-4.5 -8,4.5" transform="translate(1045 108) rotate(0)"/>
+        <polygon class="pc-arrow loop" style="--d:14.286s" points="0,0 -8,-4.5 -8,4.5" transform="translate(1150 162) rotate(90)"/>
+        <polygon class="pc-arrow loop" style="--d:17.286s" points="0,0 -8,-4.5 -8,4.5" transform="translate(1150 257) rotate(-90)"/>
       </svg>
 
       <!-- Semaine 1 -->
-      <div class="pc-node pc-glow" style="left:132px;top:85px;width:190px;height:46px;--a:2.883s;--d:2.933s"><span class="pc-ic"><i data-lucide="database-zap"></i></span><span class="pc-tx"><b>Import des DSN, 3 ans</b></span></div>
-      <div class="pc-node pc-glow" style="left:132px;top:308px;width:190px;height:44px;--a:0.400s;--d:0.650s"><span class="pc-ic"><i data-lucide="messages-square"></i></span><span class="pc-tx"><b>Entretien de cadrage</b></span></div>
-      <div class="pc-mock" style="left:132px;top:44px;width:190px;height:132px;--d:1.633s"><div class="pc-bar"><i></i><i></i><i></i><b>DSN 2023 à 2025</b></div>
+      <div class="pc-node pc-glow" style="left:132px;top:85px;width:190px;height:46px;--a:4.774s;--d:4.848s"><span class="pc-ic"><i data-lucide="database-zap"></i></span><span class="pc-tx"><b>Import des DSN, 3 ans</b></span></div>
+      <div class="pc-node pc-glow" style="left:132px;top:308px;width:190px;height:44px;--a:0.450s;--d:1.425s"><span class="pc-ic"><i data-lucide="messages-square"></i></span><span class="pc-tx"><b>Entretien de cadrage</b></span></div>
+      <div class="pc-mock" style="left:132px;top:44px;width:190px;height:132px;--d:2.898s"><div class="pc-bar"><i></i><i></i><i></i><b>DSN 2023 à 2025</b></div>
         <div class="pc-row"><span class="l">Janvier 2023</span><span class="pc-chip ok">Valide</span></div>
-        <div class="pc-row"><span class="l">Mars 2024</span><span class="pc-chip navy pc-pop" style="--d:1.933s">Anomalie</span></div>
+        <div class="pc-row"><span class="l">Mars 2024</span><span class="pc-chip navy pc-pop" style="--d:3.348s">Anomalie</span></div>
         <div class="pc-row"><span class="l">Juin 2024</span><span class="pc-chip ok">Valide</span></div>
-        <div class="pc-row"><span class="l">Février 2025</span><span class="pc-chip navy pc-pop" style="--d:2.183s">Anomalie</span></div>
+        <div class="pc-row"><span class="l">Février 2025</span><span class="pc-chip navy pc-pop" style="--d:3.723s">Anomalie</span></div>
         <div class="pc-foot">36 DSN importées</div></div>
 
       <!-- 4 à 6 semaines -->
-      <div class="pc-node pc-glow" style="left:366px;top:85px;width:240px;height:46px;--a:4.042s;--d:4.092s"><span class="pc-ic"><i data-lucide="list-checks"></i></span><span class="pc-tx"><b>Anomalies classées</b></span></div>
-      <div class="pc-mock" style="left:366px;top:44px;width:240px;height:132px;--d:2.792s"><div class="pc-bar"><i></i><i></i><i></i><b>Anomalies détectées</b></div>
-        <div class="pc-row pc-stag" style="--d:2.942s"><span class="l">Taux AT/MP</span><span class="pc-chip navy">Bloquante</span></div>
-        <div class="pc-row pc-stag" style="--d:3.092s"><span class="l">Réduction générale</span><span class="pc-chip navy">Bloquante</span></div>
-        <div class="pc-row pc-stag" style="--d:3.242s"><span class="l">Versement mobilité</span><span class="pc-chip lt">À vérifier</span></div>
-        <div class="pc-row pc-stag" style="--d:3.392s"><span class="l">Assiette prévoyance</span><span class="pc-chip gr">Information</span></div>
+      <div class="pc-node pc-glow" style="left:366px;top:85px;width:240px;height:46px;--a:6.513s;--d:6.588s"><span class="pc-ic"><i data-lucide="list-checks"></i></span><span class="pc-tx"><b>Anomalies classées</b></span></div>
+      <div class="pc-mock" style="left:366px;top:44px;width:240px;height:132px;--d:4.638s"><div class="pc-bar"><i></i><i></i><i></i><b>Anomalies détectées</b></div>
+        <div class="pc-row pc-stag" style="--d:4.863s"><span class="l">Taux AT/MP</span><span class="pc-chip navy">Bloquante</span></div>
+        <div class="pc-row pc-stag" style="--d:5.088s"><span class="l">Réduction générale</span><span class="pc-chip navy">Bloquante</span></div>
+        <div class="pc-row pc-stag" style="--d:5.313s"><span class="l">Versement mobilité</span><span class="pc-chip lt">À vérifier</span></div>
+        <div class="pc-row pc-stag" style="--d:5.538s"><span class="l">Assiette prévoyance</span><span class="pc-chip gr">Information</span></div>
         <div class="pc-foot">7 anomalies classées</div></div>
-      <div class="pc-lbl" style="left:492px;top:250px;--d:3.552s">Historique fiabilisé</div>
-      <div class="pc-node pc-glow" style="left:366px;top:336px;width:240px;height:46px;--a:5.905s;--d:5.955s"><span class="pc-ic"><i data-lucide="file-spreadsheet"></i></span><span class="pc-tx"><b>Chiffrage, 180&nbsp;000 €</b></span></div>
-      <div class="pc-node pc-glow" style="left:366px;top:272px;width:240px;height:46px;--a:3.552s;--d:3.802s"><span class="pc-ic"><i data-lucide="calculator"></i></span><span class="pc-tx"><b>Recalcul poste par poste</b></span></div>
-      <div class="pc-mock pc-sheet" style="left:366px;top:322px;width:240px;height:111px;transform-origin:50% 33%;--d:4.255s"><div class="pc-bar"><i></i><i></i><i></i><b>Chiffrage des trop-versés</b></div>
-        <div class="pc-row pc-stag" style="--d:4.255s"><span class="l">Réduction générale</span><span class="v">72&nbsp;500 €</span></div>
-        <div class="pc-row pc-stag" style="--d:4.405s"><span class="l">Taux AT/MP</span><span class="v">29&nbsp;200 €</span></div>
-        <div class="pc-row pc-stag" style="--d:4.555s"><span class="l">Autres lignes</span><span class="v">78&nbsp;300 €</span></div>
-        <div class="pc-sum"><span>Total</span><b data-count="180000" data-delay="4604">180&nbsp;000 €</b></div></div>
+      <div class="pc-lbl" style="left:492px;top:250px;--d:5.778s">Historique fiabilisé</div>
+      <div class="pc-node pc-glow" style="left:366px;top:336px;width:240px;height:46px;--a:9.308s;--d:9.383s"><span class="pc-ic"><i data-lucide="file-spreadsheet"></i></span><span class="pc-tx"><b>Chiffrage, 180&nbsp;000 €</b></span></div>
+      <div class="pc-node pc-glow" style="left:366px;top:272px;width:240px;height:46px;--a:5.778s;--d:6.153s"><span class="pc-ic"><i data-lucide="calculator"></i></span><span class="pc-tx"><b>Recalcul poste par poste</b></span></div>
+      <div class="pc-mock pc-sheet" style="left:366px;top:322px;width:240px;height:111px;transform-origin:50% 33%;--d:6.832s"><div class="pc-bar"><i></i><i></i><i></i><b>Chiffrage des trop-versés</b></div>
+        <div class="pc-row pc-stag" style="--d:6.832s"><span class="l">Réduction générale</span><span class="v">72&nbsp;500 €</span></div>
+        <div class="pc-row pc-stag" style="--d:7.058s"><span class="l">Taux AT/MP</span><span class="v">29&nbsp;200 €</span></div>
+        <div class="pc-row pc-stag" style="--d:7.283s"><span class="l">Autres lignes</span><span class="v">78&nbsp;300 €</span></div>
+        <div class="pc-sum"><span>Total</span><b data-count="180000" data-delay="7357">180&nbsp;000 €</b></div></div>
 
       <!-- Après validation -->
-      <div class="pc-node pc-glow" style="left:646px;top:85px;width:200px;height:46px;--a:7.130s;--d:7.380s"><span class="pc-ic"><i data-lucide="file-check"></i></span><span class="pc-tx"><b>Blocs de régularisation générés</b></span></div>
-      <div class="pc-lbl" style="left:758px;top:250px;--d:7.130s">Corrections à déclarer</div>
-      <div class="pc-node pc-glow" style="left:646px;top:267px;width:200px;height:56px;--a:6.320s;--d:6.570s"><span class="pc-ic"><i data-lucide="wrench"></i></span><span class="pc-tx"><b>Correction des paramétrages et transfert de compétences</b></span></div>
-      <div class="pc-node pc-glow" style="left:646px;top:336px;width:200px;height:46px;--a:5.467s;--d:5.717s"><span class="pc-ic"><i data-lucide="landmark"></i></span><span class="pc-tx"><b>Démarches auprès des organismes</b></span></div>
+      <div class="pc-node pc-glow" style="left:646px;top:85px;width:200px;height:46px;--a:11.145s;--d:11.520s"><span class="pc-ic"><i data-lucide="file-check"></i></span><span class="pc-tx"><b>Blocs de régularisation générés</b></span></div>
+      <div class="pc-lbl" style="left:758px;top:250px;--d:11.145s">Corrections à déclarer</div>
+      <div class="pc-node pc-glow" style="left:646px;top:267px;width:200px;height:56px;--a:9.930s;--d:10.305s"><span class="pc-ic"><i data-lucide="wrench"></i></span><span class="pc-tx"><b>Correction des paramétrages et transfert de compétences</b></span></div>
+      <div class="pc-node pc-glow" style="left:646px;top:336px;width:200px;height:46px;--a:8.651s;--d:9.026s"><span class="pc-ic"><i data-lucide="landmark"></i></span><span class="pc-tx"><b>Démarches auprès des organismes</b></span></div>
 
       <!-- Chaque mois -->
-      <div class="pc-node pc-glow" style="left:1045px;top:85px;width:210px;height:46px;--a:8.391s;--d:8.641s"><span class="pc-ic"><i data-lucide="shield-check"></i></span><span class="pc-tx"><b>Contrôle de chaque DSN</b></span></div>
+      <div class="pc-node pc-glow" style="left:1045px;top:85px;width:210px;height:46px;--a:13.037s;--d:13.412s"><span class="pc-ic"><i data-lucide="shield-check"></i></span><span class="pc-tx"><b>Contrôle de chaque DSN</b></span></div>
       <div class="pc-hub"><i data-lucide="repeat"></i><span>Chaque<br>mois</span></div>
-      <div class="pc-lbl" style="left:1162px;top:297px;width:96px;box-sizing:border-box;--d:10.874s">Évolutions réglementaires</div>
-      <div class="pc-node pc-glow" style="left:1045px;top:340px;width:210px;height:62px;--a:10.224s;--d:10.724s"><span class="pc-ic"><i data-lucide="scale"></i></span><span class="pc-tx"><b>Veille réglementaire</b><small>Préparation du contrôle URSSAF</small></span></div>
+      <div class="pc-lbl" style="left:1162px;top:297px;width:96px;box-sizing:border-box;--d:16.761s">Évolutions réglementaires</div>
+      <div class="pc-node pc-glow" style="left:1045px;top:340px;width:210px;height:62px;--a:15.786s;--d:16.536s"><span class="pc-ic"><i data-lucide="scale"></i></span><span class="pc-tx"><b>Veille réglementaire</b><small>Préparation du contrôle URSSAF</small></span></div>
 
       <div class="pc-doc"><span class="tab">DSN</span><i></i><i></i></div>
     </div>
@@ -768,7 +768,7 @@
         function run() {
           if (reduce) return;
           cancelAnimationFrame(timer);
-          var t0 = null, dur = 1200;
+          var t0 = null, dur = 1800;
           cells.forEach(function (c) { c.textContent = fmt(0); });
           function step(t) {
             if (t0 === null) t0 = t;
@@ -791,8 +791,6 @@
       })();
     </script>
 </section>
-
-<section class="slide" data-chapter="clients" data-shared="clients"></section>
 
 <section class="slide" data-chapter="demarrage">
   <style>
