@@ -270,15 +270,48 @@
 
 <section class="slide" data-chapter="valeur-1">
   <style>
-    .slide[data-chapter="valeur-1"] .value-detail-layout { grid-template-columns: 1fr; gap: 26px; max-width: 1100px; transform: none; }
-    .slide[data-chapter="valeur-1"] .value-detail-content h2 { margin-bottom: 18px; }
-    .slide[data-chapter="valeur-1"] .value-detail-list { display: grid; grid-template-columns: 1fr 1fr; column-gap: 40px; row-gap: 10px; }
-    .slide[data-chapter="valeur-1"] .value-detail-list li { margin-bottom: 0; font-size: 16px; }
-    .slide[data-chapter="valeur-1"] .value-image-container { max-width: 1060px; display: block; }
-    .slide[data-chapter="valeur-1"] .mk-bar { height: 34px; background: #F1F4F7; border-bottom: 1px solid #E1E7EC; display: flex; align-items: center; padding: 0 14px; gap: 6px; }
-    .slide[data-chapter="valeur-1"] .mk-dot { width: 10px; height: 10px; border-radius: 50%; background: #C5CCD3; }
-    .slide[data-chapter="valeur-1"] .mk-bar img { height: 15px; width: auto; margin-left: 12px; }
-    .slide[data-chapter="valeur-1"] .mk-tag { margin-left: auto; font-size: 10px; color: #6B7785; font-weight: 700; letter-spacing: .3px; border: 1px solid #D5DCE3; border-radius: 10px; padding: 2px 8px; background: #fff; font-family: 'Lato', sans-serif; }
+    .slide[data-chapter="valeur-1"] .value-detail-layout { grid-template-columns: 0.82fr 1.18fr; gap: 44px; }
+    .slide[data-chapter="valeur-1"] .value-image-container { max-width: 640px; display: block; text-align: left; font-family: Roboto, 'Lato', Arial, sans-serif; }
+    .slide[data-chapter="valeur-1"] .mk-bar { height: 30px; background: #F1F4F7; border-bottom: 1px solid #E1E7EC; display: flex; align-items: center; padding: 0 12px; gap: 5px; }
+    .slide[data-chapter="valeur-1"] .mk-dot { width: 9px; height: 9px; border-radius: 50%; background: #C5CCD3; }
+    .slide[data-chapter="valeur-1"] .mk-bar img { height: 14px; width: auto; margin-left: 10px; }
+    .slide[data-chapter="valeur-1"] .mk-tag { margin-left: auto; font-family: 'Lato', sans-serif; font-size: 9.5px; color: #6B7785; font-weight: 700; border: 1px solid #D5DCE3; border-radius: 10px; padding: 1px 8px; background: #fff; }
+    /* ZenDSN app chrome */
+    .slide[data-chapter="valeur-1"] .zd-top { height: 30px; background: #003D6E; color: #fff; display: flex; align-items: center; padding: 0 10px; gap: 8px; font-size: 12px; font-weight: 500; }
+    .slide[data-chapter="valeur-1"] .zd-top svg { width: 13px; height: 13px; }
+    .slide[data-chapter="valeur-1"] .zd-icons { margin-left: auto; display: flex; align-items: center; gap: 9px; }
+    .slide[data-chapter="valeur-1"] .zd-icons svg { width: 11px; height: 11px; }
+    .slide[data-chapter="valeur-1"] .zd-icons .on { width: 20px; height: 20px; border-radius: 50%; background: #F57C00; display: flex; align-items: center; justify-content: center; }
+    .slide[data-chapter="valeur-1"] .zd-icons .av { width: 20px; height: 20px; border-radius: 50%; background: #2DBE60; font-size: 8.5px; display: flex; align-items: center; justify-content: center; margin-left: 4px; }
+    .slide[data-chapter="valeur-1"] .zd-body { background: #F4F5F7; padding: 0 10px 10px; }
+    .slide[data-chapter="valeur-1"] .zd-sub { height: 32px; display: flex; align-items: center; justify-content: space-between; font-size: 10.5px; color: #333; }
+    .slide[data-chapter="valeur-1"] .zd-per { display: flex; align-items: center; gap: 6px; font-size: 9px; color: #333; }
+    .slide[data-chapter="valeur-1"] .zd-per small { display: block; font-size: 6.5px; color: #666; }
+    .slide[data-chapter="valeur-1"] .zd-per span { border-bottom: 1px solid #999; padding: 0 22px 1px 0; }
+    .slide[data-chapter="valeur-1"] .zd-per svg { width: 10px; height: 10px; color: #555; }
+    .slide[data-chapter="valeur-1"] .zd-card { background: #fff; border-radius: 3px; box-shadow: 0 1px 2px rgba(0,0,0,.08); }
+    .slide[data-chapter="valeur-1"] .zd-card-head { height: 28px; display: flex; align-items: center; justify-content: space-between; padding: 0 8px; font-size: 10px; color: #333; }
+    .slide[data-chapter="valeur-1"] .zd-search { width: 46%; border-bottom: 1px solid #C9CDD2; font-size: 8px; color: #999; display: flex; align-items: center; gap: 4px; padding-bottom: 2px; }
+    .slide[data-chapter="valeur-1"] .zd-search svg { width: 9px; height: 9px; }
+    .slide[data-chapter="valeur-1"] .zd-row { display: grid; grid-template-columns: 16px 1.05fr .55fr .8fr .7fr 1.3fr 1.3fr 1.3fr .65fr; align-items: center; border-top: 1px solid #ECEEF0; height: 27px; }
+    .slide[data-chapter="valeur-1"] .zd-row.zd-th { height: 26px; border-top: none; font-size: 7px; color: #333; text-align: center; line-height: 1.25; }
+    .slide[data-chapter="valeur-1"] .zd-row > span { display: flex; justify-content: center; gap: 3px; }
+    .slide[data-chapter="valeur-1"] .zd-row.zd-th > span { display: block; }
+    .slide[data-chapter="valeur-1"] .zd-row > span:nth-child(2) { justify-content: flex-start; }
+    .slide[data-chapter="valeur-1"] .zd-row > span:nth-child(3), .slide[data-chapter="valeur-1"] .zd-row > span:nth-child(4) { background: #F2F3F5; align-self: stretch; align-items: center; }
+    .slide[data-chapter="valeur-1"] .zd-th > span:nth-child(3), .slide[data-chapter="valeur-1"] .zd-th > span:nth-child(4) { background: none; align-self: center; }
+    .slide[data-chapter="valeur-1"] .zd-cb { width: 8px; height: 8px; border: 1px solid #555; border-radius: 1px; margin-left: 4px; }
+    .slide[data-chapter="valeur-1"] .zd-ent { display: flex; flex-direction: column; font-size: 7.5px; line-height: 1.15; color: #333; padding-left: 4px; }
+    .slide[data-chapter="valeur-1"] .zd-ent em { color: #777; font-size: 6.5px; }
+    .slide[data-chapter="valeur-1"] .zd-ent-wrap { display: flex; align-items: center; justify-content: space-between; width: 100%; padding-right: 4px; }
+    .slide[data-chapter="valeur-1"] .zd-est { font-size: 6px; color: #1F3B73; border: 1px solid #1F3B73; border-radius: 6px; padding: 0 3px; font-weight: 700; }
+    .slide[data-chapter="valeur-1"] .c { width: 20px; height: 17px; border-radius: 2px; color: #fff; font-size: 8.5px; font-weight: 700; display: flex; align-items: center; justify-content: center; }
+    .slide[data-chapter="valeur-1"] .c.e { visibility: hidden; }
+    .slide[data-chapter="valeur-1"] .c.r { background: #EE1D23; } .slide[data-chapter="valeur-1"] .c.o { background: #F8A84A; } .slide[data-chapter="valeur-1"] .c.b { background: #4FC1EE; } .slide[data-chapter="valeur-1"] .c.g { background: #4CA64C; }
+    @keyframes v1-row { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+    .slide.active.slide[data-chapter="valeur-1"] .zd-row.d { animation: v1-row .35s ease both; }
+    .slide.active.slide[data-chapter="valeur-1"] .zd-row.d1 { animation-delay: .3s; } .slide.active.slide[data-chapter="valeur-1"] .zd-row.d2 { animation-delay: .45s; } .slide.active.slide[data-chapter="valeur-1"] .zd-row.d3 { animation-delay: .6s; } .slide.active.slide[data-chapter="valeur-1"] .zd-row.d4 { animation-delay: .75s; } .slide.active.slide[data-chapter="valeur-1"] .zd-row.d5 { animation-delay: .9s; }
+    @media (prefers-reduced-motion: reduce) { .slide.active.slide[data-chapter="valeur-1"] * { animation: none !important; } }
   </style>
   <div class="value-detail-layout">
     <div class="value-detail-content">
@@ -291,13 +324,27 @@
       </ul>
     </div>
     <div class="value-detail-visual">
-      <div class="value-image-container">
+      <div class="value-image-container" role="img" aria-label="Tableau de synthèse ZenDSN, anomalies DSN par entreprise et par catégorie de contrôle">
         <div class="mk-bar">
           <span class="mk-dot"></span><span class="mk-dot"></span><span class="mk-dot"></span>
           <img src="https://ayming-france.github.io/assets/imagery/charges-sociales-zendsn/zendsn-logo.png" alt="ZenDSN">
-          <span class="mk-tag">Tableau de synthèse</span>
+          <span class="mk-tag">Exemple illustratif</span>
         </div>
-        <img src="https://ayming-france.github.io/assets/imagery/charges-sociales-zendsn/tableau-synthese.png" alt="Tableau de synthèse ZenDSN, anomalies DSN par entreprise et par catégorie de contrôle">
+        <div class="zd-top"><i data-lucide="menu"></i>DEMOBIS
+          <span class="zd-icons"><span class="on"><i data-lucide="clipboard-check"></i></span><i data-lucide="globe"></i><i data-lucide="wrench"></i><i data-lucide="scan-search"></i><i data-lucide="settings"></i><span class="av">AF</span></span>
+        </div>
+        <div class="zd-body">
+          <div class="zd-sub">Tableau de synthèse<span class="zd-per"><i data-lucide="filter"></i><i data-lucide="chevron-left"></i><span><small>Période de déclaration</small>03/2026</span><i data-lucide="calendar"></i><i data-lucide="chevron-right"></i></span></div>
+          <div class="zd-card">
+            <div class="zd-card-head">Liste des entreprises<span class="zd-search"><i data-lucide="search"></i>Rechercher</span></div>
+            <div class="zd-row zd-th"><span><i class="zd-cb" style="display:inline-block"></i></span><span style="text-align:left;padding-left:4px">Entreprise</span><span>DSN</span><span>CRM</span><span>DSNVAL</span><span>Contrôles de cohérence</span><span>Réduction &amp; compl. de cotisations</span><span>Déclaratif</span><span>CTP URSSAF</span></div>
+          <div class="zd-row d d1"><span><i class="zd-cb"></i></span><span><span class="zd-ent-wrap"><span class="zd-ent">AE<em>DEMO 5</em></span><span class="zd-est">⌂ 3</span></span></span><span><i class="c b">3</i></span><span><i class="c r">2</i><i class="c g">1</i></span><span><i class="c g"></i></span><span><i class="c r">138</i><i class="c o">71</i><i class="c b">12</i></span><span><i class="c e"></i><i class="c o">2</i><i class="c b">3</i></span><span><i class="c e"></i><i class="c o">1</i><i class="c b">2</i></span><span><i class="c r">12</i></span></div>
+          <div class="zd-row d d2"><span><i class="zd-cb"></i></span><span><span class="zd-ent-wrap"><span class="zd-ent">AA<em>DEMO 1</em></span><span class="zd-est">⌂ 1</span></span></span><span><i class="c b">1</i></span><span><i class="c r">1</i></span><span><i class="c o">5</i></span><span><i class="c r">62</i><i class="c o">16</i><i class="c b">4</i></span><span><i class="c e"></i><i class="c e"></i><i class="c b">3</i></span><span><i class="c r">3</i><i class="c e"></i><i class="c b">2</i></span><span><i class="c r">2</i></span></div>
+          <div class="zd-row d d3"><span><i class="zd-cb"></i></span><span><span class="zd-ent-wrap"><span class="zd-ent">AB<em>DEMO 2</em></span><span class="zd-est">⌂ 1</span></span></span><span><i class="c b">1</i></span><span><i class="c r">1</i></span><span><i class="c g"></i></span><span><i class="c r">52</i><i class="c o">15</i><i class="c b">3</i></span><span><i class="c r">3</i><i class="c e"></i><i class="c b">3</i></span><span><i class="c e"></i><i class="c o">1</i><i class="c b">2</i></span><span><i class="c r">6</i></span></div>
+          <div class="zd-row d d4"><span><i class="zd-cb"></i></span><span><span class="zd-ent-wrap"><span class="zd-ent">AC<em>DEMO 3</em></span><span class="zd-est">⌂ 1</span></span></span><span><i class="c b">1</i></span><span><i class="c r">1</i></span><span><i class="c g"></i></span><span><i class="c r">61</i><i class="c o">17</i><i class="c b">3</i></span><span><i class="c r">3</i><i class="c e"></i><i class="c b">11</i></span><span><i class="c r">3</i><i class="c o">1</i><i class="c b">1</i></span><span><i class="c r">3</i></span></div>
+          <div class="zd-row d d5"><span><i class="zd-cb"></i></span><span><span class="zd-ent-wrap"><span class="zd-ent">AD<em>DEMO 4</em></span><span class="zd-est">⌂ 2</span></span></span><span><i class="c b">2</i></span><span><i class="c r">2</i></span><span><i class="c o">2</i></span><span><i class="c r">49</i><i class="c o">41</i><i class="c b">1</i></span><span><i class="c r">3</i><i class="c o">1</i><i class="c b">2</i></span><span><i class="c r">4</i><i class="c e"></i><i class="c b">1</i></span><span><i class="c r">2</i></span></div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
